@@ -29,6 +29,8 @@ API 网关是数据及系统集成的基础设施，支持将云端应用及数�
     {
         "_id": ObjectID
         "method": String,
+        "regExp": String,
+        "project": String,
         "protocol": String,
         "hostname": String,
         "pathname": String,
@@ -65,10 +67,132 @@ API 网关是数据及系统集成的基础设施，支持将云端应用及数�
 ### API 概要设计
 
 1. 添加 API
+
+- GET /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 2. 删除 API
+- DELETE /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {}
+    }
+```
 3. 修改 API
+- PUT /api/:api_id
+- Request application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 4. 查看 API
+- GET /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 5. 查看 API 列表
+- GET /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 
 ### MOCK 概要设计
 
@@ -93,10 +217,132 @@ API 网关是数据及系统集成的基础设施，支持将云端应用及数�
 ### API 详细设计
 
 1. 添加 API
+
+- GET /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 2. 删除 API
+- DELETE /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {}
+    }
+```
 3. 修改 API
+- PUT /api/:api_id
+- Request application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 4. 查看 API
+- GET /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 5. 查看 API 列表
+- GET /api/:api_id
+- Response application/json
+```json
+    {
+        "code": int,
+        "msg": String,
+        "data": {
+            "id": String,
+            "method": String,
+            "regExp": String,
+            "project": String,
+            "protocol": String,
+            "hostname": String,
+            "pathname": String,
+            "request": {
+                "headers": Object,
+                "params": Object,
+                "query": Object,
+                "body": Object
+            },
+            "response": {
+                "headers": Object,
+                "body": Object
+            },
+            "mocks": [ObjectID]
+        }
+    }
+```
 
 ### MOCK 详细设计
 
